@@ -83,4 +83,4 @@ Bitcoin : 17qKUu57aUBcvx9T1ea8Ga87EPnDdmwAEP </br>
 Ether : 0xdFE8D1536deE8F839Ede7c1f3A0c44116287D931  
 Bitcoin Cash : qp90gf09r3y3h06czmtnsfhz9w7s90se4s72vd9pam </br> 
 </br>
-🙇‍♀️👾🤩Thank you! 🤩👾🙇‍♂️
+🙇‍♀️👾🤩Thank you! 🤩👾🙇‍♂️ 
