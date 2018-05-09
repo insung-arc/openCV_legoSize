@@ -1,13 +1,21 @@
-# openCV_legoSize
+## openCV_legoSize
 openCV를 이용해서 LEGO 빔의 사이즈를 체킹 하는 프로그램이다. </br>
 물론 LEGO 말고도 다른것도 가능하다. 가급적 각이진 물건이 가장 좋다.</br>
 하지만 단점이 있다면 이 코드는 아직 까진 실시간으로 인식이 되질 않는다. 실시간 코드를 현재 작성 중이긴 하지만 꽤 오래 걸릴거 같다. </br>
 
-# Before the Starting...
+## Before the Starting...
 🗣이 코드는 Adrian Rosebrock의 코드을 이용하여 작성 되었습니다.
-[<a href="https://www.pyimagesearch.com/2016/03/28/measuring-size-of-objects-in-an-image-with-opencv/">참고 사이트</a>]🗣
+[<a href="https://www.pyimagesearch.com/2016/03/28/measuring-size-of-objects-in-an-image-with-opencv/">참고 사이트</a>]🗣 </br>
+Thank you Adrian! :)
 
-# Prepare to RUN 
+## Requirements
+<ul>
+  <li><a href="www.python.org">[Python]</a></li>
+  <li><a href="www.opencv.org">[openCV]</a></li>
+  <li>[Webcam]</li>
+</ul>
+
+## Prepare to RUN 
 
 작성일 2018년 3월 기준으로 현재는 맥과 리눅스에서 테스트를 해봤을때 문제 없이 잘 되었다. </br>
 아직 까진 윈도우에 대해서는 잘 모르겠지만 윈도우도 잘 되지 않을까 싶다. </br> 
@@ -33,23 +41,21 @@ macOS High Sierra Version '10.13.3'
 Python '2.7.14'
 openCV Version '3.4.0'
 Linux Ubuntu '16.04.4'
-Edit Tool Visual Stuido Code '1.12.0'
+Edit Tool Visual Stuido Code '1.23.0'
 </pre>
 ~~일종의 컴퓨터 자랑이다, 헣~~. 사실 프로그래머가 맥 유저여서 윈도우를 그닥 쓰질 않는다. 혹시 윈도우로 테스트 하고 버그가 생긴다면 말해주길 바란다. 딱히 이상한 의도는 전혀 없다. 그저 포스팅을 위해서 말하는 것이다. </br>
 </br>
 openCV 설치를 다했다면 이제 pip 설치를 해야한다. 설치해야 할 패키지가 생각보다 많다. </br>
 아래에 pip 설치 명령어를 입력 했다. 자신이 마우스를 잘 쓴다면 마우스로 Copy -> Paste 를 이용하거나 Ctrl + C -> Ctrl + V 를 이용하길 바란다.</br>
 <pre>
-$ pip install argparse
-$ pip install imutils
-$ pip install logging
-$ pip install datetime
-$ pip install csv
+~ $ pip install argparse
+~ $ pip install imutils
+~ $ pip install logging
+~ $ pip install datetime
+~ $ pip install csv
 </pre>
-앞에 "$" 표시를 한 이유는 명령어라는 것을 알려주기 위해서 단 것이다. 불편하다면 미안 합니다. </br>
-이 모든것을 설치를 다 했다면 이제 실행을 해봐야 한다. </br>
 
-# openCV Measuring Size Image 
+## openCV Measuring Size Image 
 openCV를 실행을 하기전에 터미널에서 실행을 해봐야 한다. </br>
 <pre>
 $ python 
@@ -63,17 +69,25 @@ Type "help", "copyright", "credits" or "license" for more information.
 </pre>
 이게 된다면 괜찮은거 같다. 카메라 실시간 인식 코드는 현재 작성중이다. 작성이 끝나면 이 저장소에다가 올릴 예정이다. </br>
 실행을 하기전에 먼저 사진이 있어야 한다. 일단 테스트 사진은 이거다. </br>
-![test1](https://github.com/insung3511/openCV_legoSize/blob/master/openCV_Size/openCV%20image/images/test1.JPG)
+![test1](https://github.com/insung3511/openCV_legoSize/openCV-image/images/test1.JPG)
 </br>
 실행 명령어는 다음과 같다. 
 <pre>
 $ python openCV_Size.py -i .../images/test1.JPG -w 3.5
 </pre>
+그 실행에 대한 결과는 다음 GIF와 나온다. </br>
+<pre>
+아직 녹화를 못해서 금방 올릴께요!
+</pre>
 
 현재 코드가 LEGO Bean에 기준으로 작성이 되어서 터미널에는 어떤 빔이 인식이 되었다고 나올수도 있다. </br>
 기존 코드의 좌표는 위에 하이퍼링크로 걸어 놓았다. </br>
 
-# Contact me
+## openCV Measuring Size Real-Time
+완전 실시간 인식 시스템은 아니다만, 그래도 나름 **비슷** 하게 만들었다. 이것 또한 어디까지나 목표를 위해서 거치는 과정 중 하나라고 생각하면 된다. </br>
+실행 방법은 간단하지만, 그 속은 전혀 간단하지 않다. 
+
+## Contact me
 If you have problem about this code, then contect me. </br>
 Email : insung.park123@gmail.com </br>
 Facebook : https://www.facebook.com/insung.bahk </br>
