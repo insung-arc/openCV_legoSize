@@ -69,7 +69,7 @@ Type "help", "copyright", "credits" or "license" for more information.
 </pre>
 이게 된다면 괜찮은거 같다. 카메라 실시간 인식 코드는 현재 작성중이다. 작성이 끝나면 이 저장소에다가 올릴 예정이다. </br>
 실행을 하기전에 먼저 사진이 있어야 한다. 일단 테스트 사진은 이거다. </br>
-![test1](https://github.com/insung3511/openCV_legoSize/openCV_Size/openCV-image/images/test1.JPG)
+![test1](https://github.com/insung3511/openCV_legoSize/blob/master/openCV_Size/openCV-image/images/test1.JPG)
 </br>
 실행 명령어는 다음과 같다. 
 <pre>
