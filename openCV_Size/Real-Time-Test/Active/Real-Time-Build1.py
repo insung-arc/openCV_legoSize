@@ -14,7 +14,7 @@
      You can use anywhere. But please add this comment title or end of the code
                             [original coding by Amn'D]
 
-                	Amn'D-LEGO Bean Size Check release : v0.3.1 (May 5 2018)
+                	Amn'D-LEGO Bean Size Check release : v0.4.6 (May 19 2018)
             Amn'd-Cleaner is open source cleaning dictoray. This code made by AmN'D
 
                       FACEBOOK : https://facebook.com/insung.bahk
