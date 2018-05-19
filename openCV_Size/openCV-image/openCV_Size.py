@@ -1,8 +1,26 @@
-# :: 	 Last Write      ::
-# :: 	 2018-03-31 	 ::
-# :: Wrote By Pobculater ::
-#
-# import the necessary packages
+'''
+    coding by
+
+                    /$$$$$$                /$$   /$$ /$$ /$$$$$$$ 
+                   /$$__  $$              | $$$ | $$| $/| $$__  $$
+                  | $$  \ $$ /$$$$$$/$$$$ | $$$$| $$|_/ | $$  \ $$
+                  |$$$$$$$$| $$_  $$_  $$| $$ $$ $$    | $$  | $$
+                  | $$__  $$| $$ \ $$ \ $$| $$  $$$$    | $$  | $$
+                  | $$  | $$| $$ | $$ | $$| $$\  $$$    | $$  | $$
+                  | $$  | $$| $$ | $$ | $$| $$ \  $$    | $$$$$$$/
+                  |__/  |__/|__/ |__/ |__/|__/  \__/    |_______/ 
+                                                
+                         *!*!THIS PROGRAME IS COPYLEFT!*!*
+     You can use anywhere. But please add this comment title or end of the code
+                            [original coding by Amn'D]
+
+                	Amn'D-LEGO Bean Size Check release : v0.3.1 (May 5 2018)
+            Amn'd-Cleaner is open source cleaning dictoray. This code made by AmN'D
+
+                      FACEBOOK : https://facebook.com/insung.bahk
+                        GITHUB : https://github.com/insung3511
+                            EMAIL : insung3511@icloud.com
+'''
 from scipy.spatial import distance as dist
 from imutils import perspective
 from imutils import contours

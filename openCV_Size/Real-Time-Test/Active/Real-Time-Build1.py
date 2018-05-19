@@ -1,12 +1,26 @@
-# ::::	2018-04-28	::::
-# ::::	Pobculater	::::
-#
-# Final Sucess :
-# Date : 2018-04-28
-# Clock : 16 : 08
-#
-# import the necessary packages
-#
+'''
+    coding by
+
+                    /$$$$$$                /$$   /$$ /$$ /$$$$$$$ 
+                   /$$__  $$              | $$$ | $$| $/| $$__  $$
+                  | $$  \ $$ /$$$$$$/$$$$ | $$$$| $$|_/ | $$  \ $$
+                  |$$$$$$$$| $$_  $$_  $$ | $$ $$ $$    | $$  | $$
+                  | $$__  $$| $$ \ $$ \ $$| $$  $$$$    | $$  | $$
+                  | $$  | $$| $$ | $$ | $$| $$\  $$$    | $$  | $$
+                  | $$  | $$| $$ | $$ | $$| $$ \  $$    | $$$$$$$/
+                  |__/  |__/|__/ |__/ |__/|__/  \__/    |_______/ 
+                                                
+                         *!*!THIS PROGRAME IS COPYLEFT!*!*
+     You can use anywhere. But please add this comment title or end of the code
+                            [original coding by Amn'D]
+
+                	Amn'D-LEGO Bean Size Check release : v0.3.1 (May 5 2018)
+            Amn'd-Cleaner is open source cleaning dictoray. This code made by AmN'D
+
+                      FACEBOOK : https://facebook.com/insung.bahk
+                        GITHUB : https://github.com/insung3511
+                            EMAIL : insung3511@icloud.com
+'''
 from scipy.spatial import distance as dist
 from imutils import perspective
 from collections import deque
@@ -28,14 +42,16 @@ print("======================START======================")
 def midpoint(ptA, ptB):
 	return ((ptA[0] + ptB[0]) * 0.5, (ptA[1] + ptB[1]) * 0.5)
 
+'''
 # Take Object Picture
-def TakePic():
+ ndef TakePic():
 	camera = cv2.VideoCapture(0)
 	frame = camera.read()[1]
 	cv2.imwrite(filename='ObjectPic.JPG', img=frame)
 
 # First take picture to get object
 TakePic()
+'''
 
 # The Main Code...
 ap = argparse.ArgumentParser()
@@ -56,6 +72,7 @@ edged = cv2.Canny(gray, 50, 80)
 edged = cv2.dilate(edged, None, iterations=1)
 edged = cv2.erode(edged, None, iterations=1)
 
+# Setting object size mesauring
 cnts = cv2.findContours(edged.copy(), cv2.RETR_EXTERNAL,
 cv2.CHAIN_APPROX_SIMPLE)
 cnts = cnts[0] if imutils.is_cv2() else cnts[1]
@@ -63,6 +80,8 @@ cnts = cnts[0] if imutils.is_cv2() else cnts[1]
 (cnts, _) = contours.sort_contours(cnts)
 pixelsPerMetric = None
 
+# This is object count essenace.
+# And under is file to write the log
 objectCount = 0
 file = open('./Results/NAME_HERE!.csv', 'w')
 
@@ -125,8 +144,8 @@ for c in cnts:
 	Messages = 'Length : ' + str(dimA) + ' | Width : ' + str(dimB) + ' | Count Number : ' + str(objectCount) + '\n'
 	file.write(Messages)
 
-	#cv2.imshow("Image", orig)
-	#cv2.waitKey(0)
+	cv2.imshow("Image", orig)
+	cv2.waitKey(0)
 	print "				"
 	
 
