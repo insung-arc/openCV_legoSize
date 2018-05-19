@@ -77,7 +77,7 @@ $ python openCV_Size.py -i .../images/test1.JPG -w 3.5
 </pre>
 그 실행에 대한 결과는 다음 GIF와 나온다. </br>
 <p align="center">
-<img align="center" src="Example-1" width= "100%" alt="Example File "test1.JPG" "/>
+<img align="center" src="https://github.com/insung3511/openCV_legoSize/blob/master/Example-1.gif" width= "100%" alt="Example File "test1.JPG" "/>
 </p>
 
 현재 코드가 LEGO Bean에 기준으로 작성이 되어서 터미널에는 어떤 빔이 인식이 되었다고 나올수도 있다. </br>
