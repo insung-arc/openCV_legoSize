@@ -75,13 +75,21 @@ Type "help", "copyright", "credits" or "license" for more information.
 <pre>
 $ python openCV_Size.py -i .../images/test1.JPG -w 3.5
 </pre>
-그 실행에 대한 결과는 다음 GIF와 나온다. </br>
+그 실행에 대한 결과는 다음 GIF 동일하게 나온다. </br>
 <p align="center">
 <img align="center" src="https://github.com/insung3511/openCV_legoSize/blob/master/Example-1.gif" width= "100%" alt="Example File "test1.JPG" "/>
 </p>
-
+음... 쓸데없이 이상한 그림자 혹은 바닥에 있는 줄(?) 같은걸 잡는 것은 코드 내에서 블러, Fade 등으로 바꿔서 사진에 맞게 다시 조정할수가 있다. 이 그 부분이 제일 귀찮고 힘든 부분인거 같다. 블러를 하나하나 맞춰 가면서 하는게 제일 힘들다고 본다. ~~openCV 할려면 진짜 맘 제대로 잡으세요..~~ </br>
 현재 코드가 LEGO Bean에 기준으로 작성이 되어서 터미널에는 어떤 빔이 인식이 되었다고 나올수도 있다. </br>
-기존 코드의 좌표는 위에 하이퍼링크로 걸어 놓았다. </br>
+</br>
+자, 그러면 이제 레고 빔을 인식하는 예시를 Gif로 녹화한 걸 보여주겠다.</br>
+사진은 아래와 동일한 사진으로 테스트를 해볼 예정이다. </br>
+![test4.JPG](https://github.com/insung3511/openCV_legoSize/blob/master/openCV_Size/openCV-image/images/test4.JPG) </br>
+사진에는 아래와 같은 Beam들이 있다.
+2beam <- 2개 </br>
+5beam <- 2개 </br>
+7beam <- 2개 </br>
+9beam <- 2개 </br>
 
 ## openCV Measuring Size Real-Time
 완전 실시간 인식 시스템은 아니다만, 그래도 나름 **비슷** 하게 만들었다. 이것 또한 어디까지나 목표를 위해서 거치는 과정 중 하나라고 생각하면 된다. </br>
