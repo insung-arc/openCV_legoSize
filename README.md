@@ -76,9 +76,9 @@ Type "help", "copyright", "credits" or "license" for more information.
 $ python openCV_Size.py -i .../images/test1.JPG -w 3.5
 </pre>
 그 실행에 대한 결과는 다음 GIF와 나온다. </br>
-<pre>
-아직 녹화를 못해서 금방 올릴께요!
-</pre>
+<p align="center">
+<img align="center" src="Example-1" width= "100%" alt="Example File "test1.JPG" "/>
+</p>
 
 현재 코드가 LEGO Bean에 기준으로 작성이 되어서 터미널에는 어떤 빔이 인식이 되었다고 나올수도 있다. </br>
 기존 코드의 좌표는 위에 하이퍼링크로 걸어 놓았다. </br>
