@@ -84,7 +84,7 @@ $ python openCV_Size.py -i .../images/test1.JPG -w 3.5
 </br>
 자, 그러면 이제 레고 빔을 인식하는 예시를 Gif로 녹화한 걸 보여주겠다.</br>
 사진은 아래와 동일한 사진으로 테스트를 해볼 예정이다. </br>
-![test4.JPG](https://github.com/insung3511/openCV_legoSize/blob/master/openCV_Size/openCV-image/images/test4.JPG) </br>
+![test4](https://github.com/insung3511/openCV_legoSize/blob/master/openCV_Size/openCV-image/images/test4.JPG) </br>
 사진에는 아래와 같은 Beam들이 있다.
 2beam <- 2개 </br>
 5beam <- 2개 </br>
