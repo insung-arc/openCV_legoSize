@@ -14,7 +14,7 @@
      You can use anywhere. But please add this comment title or end of the code
                             [original code by Amn'D]
 
-           Amn'D-LEGO Bean Size Check(Compress) release : v0.4.3 (May 19 2018)
+           Amn'D-LEGO Bean Size Check(Compress) release : v1.0.0 (May 26 2018)
         Amn'd-CV?X!Size is open source cleaning dictoray. This code made by AmN'D
 
                     FACEBOOK : https://facebook.com/insung.bahk
@@ -50,6 +50,8 @@ def TakePic():
 	frame = camera.read()[1]
 	cv2.imwrite(filename='ObjectPic.JPG', img=frame)
 
+# main function M-A-I-N code.
+# This code that measuring the size of LEGO beam by size.
 def main():
 	ap = argparse.ArgumentParser()
 	ap.add_argument("-i", "--image", required=True,
@@ -76,41 +78,70 @@ def main():
 	(cnts, _) = contours.sort_contours(cnts)
 	pixelsPerMetric = None
 
+	# open save file dictory 
+	# and create counting number
 	objectCount = 0
 	file = open('./Results/NAME_HERE!.csv', 'w')
 
+	# Create 2beam ~ 9beam number
+	# This number is used for lines 150 to 164.
+	TwoBeam = 0
+	FiveBeam = 0
+	SevenBeam = 0
+	NineBeam = 0
+
+	# The annotations of this function are annotations written by Andrian. # 
+	# Also part of the main function code is written by Andrian. #
+	# 					*Thank to Andrian*						#
+	
+	# loop over the contours individually
 	for c in cnts:
+		# if the contour is not sufficiently large, ignore it
 		if cv2.contourArea(c) < 100:
 		    continue
 
+		# compute the rotated bounding box of the contour
 		orig = image.copy()
 		box = cv2.minAreaRect(c)
 		box = cv2.cv.BoxPoints(box) if imutils.is_cv2() else cv2.boxPoints(box)
 		box = np.array(box, dtype="int")
 
+		# order the points in the contour such that they appear
+		# in top-left, top-right, bottom-right, and bottom-left
+		# order, then draw the outline of the rotated bounding
+		# box
 		box = perspective.order_points(box)
 		cv2.drawContours(orig, [box.astype("int")], -1, (0, 255, 0), 2)
 
+		# loop over the original points and draw them
 		for (x, y) in box:
 			cv2.circle(orig, (int(x), int(y)), 5, (0, 0, 255), -1)
         
+		# unpack the ordered bounding box, then compute the midpoint
+		# between the top-left and top-right coordinates, followed by
+		# the midpoint between bottom-left and bottom-right coordinates
 		(tl, tr, br, bl) = box
 		(tltrX, tltrY) = midpoint(tl, tr)
 		(blbrX, blbrY) = midpoint(bl, br)
 
+		# compute the midpoint between the top-left and top-right points,
+		# followed by the midpoint between the top-righ and bottom-right
 		(tlblX, tlblY) = midpoint(tl, bl)
 		(trbrX, trbrY) = midpoint(tr, br)
 
+		# draw the midpoints on the image
 	 	cv2.circle(orig, (int(tltrX), int(tltrY)), 5, (255, 0, 0), -1)
 		cv2.circle(orig, (int(blbrX), int(blbrY)), 5, (255, 0, 0), -1)
 		cv2.circle(orig, (int(tlblX), int(tlblY)), 5, (255, 0, 0), -1)
 		cv2.circle(orig, (int(trbrX), int(trbrY)), 5, (255, 0, 0), -1)
 
+		# draw lines between the midpoint
 		cv2.line(orig, (int(tltrX), int(tltrY)), (int(blbrX), int(blbrY)),
 			(255, 0, 255), 2)
 		cv2.line(orig, (int(tlblX), int(tlblY)), (int(trbrX), int(trbrY)),
 			(255, 0, 255), 2)
 
+		# compute the Euclidean distance between the midpoints
 		dA = dist.euclidean((tltrX, tltrY), (blbrX, blbrY))
 		dB = dist.euclidean((tlblX, tlblY), (trbrX, trbrY))
 
@@ -133,6 +164,24 @@ def main():
 		print "Conuting Result : ", objectCount
 		print "Length(dimA) : ", dimA, "| Width(dimB) : ", dimB
 		print "dimB Round Result : ", RounddimB
+
+		# Part which distinguishes the length of Lego beam
+		# 		*Translate by Google Translator*
+		if RounddimB <= 1.4:
+				print "This beam is 2beam"
+				TwoBeam = TwoBeam + 1
+
+		elif RounddimB <= 3.5:
+				print "This beam is 5beam"
+				FiveBeam = FiveBeam + 1
+
+		elif RounddimB <= 4.9:
+				print "This beam is 7beam"
+				SevenBeam = SevenBeam + 1
+
+		elif RounddimB <= 6.0:
+				print "This beam is 9beam"
+				NineBeam = NineBeam + 1
 
 		Messages = 'Length : ' + str(dimA) + ' | Width : ' + str(dimB) + ' | Count Number : ' + str(objectCount) + '\n'
 		file.write(Messages)
