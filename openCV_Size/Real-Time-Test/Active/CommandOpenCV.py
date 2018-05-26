@@ -41,10 +41,20 @@ def TakePic():
 # If you want change [Real-Time-Build1.py] file dictoray. 
 # Then you have to also move [Real-Time-Build1.py].
 def CommandCode():
-    command = "python" + " " + "Real-Time-Build.py" + " " + "-i" + "ObjectPic.JPG" + " " + "-w" + " " + "3.5"
+    command = "python" + " " + "Real-Time-Build1.py" + " " + "-i" + "ObjectPic.JPG" + " " + "-w" + " " + "3.5"
     process = os.popen(command)
     results = str(process.read())
     return results
+
+# Am... This function was show the about mesauring size data.
+# It have some wrong part... so, AmN'D is fixing it!
+'''
+def FinalResult():
+    command = "cat" + " " + "./Results/NAME_HERE!.csv"
+    process = os.popen(command)
+    results = str(process.read())
+    return results
+'''
 
 if __name__ == "__main__":
     TakePic()

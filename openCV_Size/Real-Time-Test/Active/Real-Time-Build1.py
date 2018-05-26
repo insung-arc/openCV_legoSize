@@ -14,7 +14,7 @@
      You can use anywhere. But please add this comment title or end of the code
                             [original code by Amn'D]
 
-                	Amn'D-LEGO Bean Size Check release : v0.3.1 (May 20 2018)
+                	Amn'D-LEGO Bean Size Check release : v0.3.1 (May 5 2018)
             Amn'd-Cleaner is open source cleaning dictoray. This code made by AmN'D
 
                       FACEBOOK : https://facebook.com/insung.bahk
@@ -41,6 +41,17 @@ print("======================START======================")
 # GUI Grapic Funtion
 def midpoint(ptA, ptB):
 	return ((ptA[0] + ptB[0]) * 0.5, (ptA[1] + ptB[1]) * 0.5)
+
+'''
+# Take Object Picture
+ ndef TakePic():
+	camera = cv2.VideoCapture(0)
+	frame = camera.read()[1]
+	cv2.imwrite(filename='ObjectPic.JPG', img=frame)
+
+# First take picture to get object
+TakePic()
+'''
 
 # The Main Code...
 ap = argparse.ArgumentParser()
